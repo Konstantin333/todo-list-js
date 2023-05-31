@@ -1,0 +1,39 @@
+{
+  "name": "todo-list-js",
+  "version": "0.0.1",
+  "main": "index.js",
+  "homepage": "https://Konstantin333.github.io/todo-list-js",
+  "scripts": {
+    "build-dev": "webpack --node-env=development",
+    "start": "webpack serve",
+    "build-prod": "webpack --node-env=production",
+    "deploy": "gh-pages -d dist",
+    "clear": "rd /s /q dist"
+  },
+  "author": "Konstantin Dan",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.4",
+    "babel-loader": "^9.1.2",
+    "css-loader": "^6.8.1",
+    "favicons": "^7.1.2",
+    "favicons-webpack-plugin": "^6.0.0",
+    "gh-pages": "^5.0.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss": "^8.4.24",
+    "postcss-loader": "^7.3.2",
+    "postcss-preset-env": "^8.4.1",
+    "sass": "^1.62.1",
+    "sass-loader": "^13.3.1",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.84.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
