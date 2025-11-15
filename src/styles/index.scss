@@ -1,0 +1,368 @@
+@import "./fonts";
+@import "./scrollbar";
+@import "./templates";
+
+body {
+  @extend %flex-center;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  flex-direction: column;
+}
+
+header {
+  @extend %flex-center;
+  @extend %header-and-footer;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+header h1 {
+  @extend %flex-center;
+  height: 100%;
+  padding: 0 10px 0 10px;
+  border-radius: 5px;
+  font-family: "Underdog", cursive;
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+
+header h1:hover {
+  background: #ffffff26;
+}
+
+header .used-framework {
+  @extend %flex-center;
+  height: 100%;
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+  // cursor: pointer;
+
+  .frameworks {
+    position: absolute;
+    z-index: 2;
+    transform: translate(41px, 96px);
+    width: 150px;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #00000033;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+
+    a {
+      padding: 10px 14px 10px 14px;
+      border-radius: 5px;
+      color: #6f7275;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background: #eeeeee;
+    }
+
+    a.dark-theme {
+      color: #fff;
+    }
+
+    a:hover.dark-theme {
+      background: #ffffff26;
+    }
+  }
+
+  .frameworks.dark-theme {
+    background: #252527;
+  }
+
+  i {
+    font-size: 45px;
+  }
+
+  .fa-arrow-turn-down {
+    align-self: end;
+    margin: 0 0 5px 10px;
+    font-size: 20px;
+  }
+}
+
+header .used-theme {
+  @extend %flex-center;
+  height: 65%;
+  padding: 0 10px 0 10px;
+  border: 1px dashed #fff;
+  border-radius: 10px;
+  margin: 0 30px 0 30px;
+  cursor: pointer;
+
+  .fa-sun {
+    font-size: 25px;
+  }
+
+  .fa-moon {
+    font-size: 25px;
+  }
+}
+
+// header .used-framework:hover {
+//   background: #ffffff26;
+// }
+
+header .used-theme:hover {
+  background: #ffffff26;
+}
+
+main {
+  @extend %flex-center;
+  width: 100%;
+  margin: 60px 0 0 0;
+  background: #e4e6e7;
+}
+
+main.dark-theme {
+  background: #141414;
+}
+
+main .container {
+  @extend %flex-center;
+  width: 1000px;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .adding-task,
+  .tasks-list,
+  .tasks-status {
+    width: 100%;
+    border-radius: 5px;
+    background: #f7faf9;
+  }
+
+  .adding-task.dark-theme,
+  .tasks-list.dark-theme,
+  .tasks-status.dark-theme {
+    color: #fff;
+    background: #1c1c1e;
+  }
+
+  .adding-task {
+    @extend %flex-center;
+    margin: 30px 0 30px 0;
+
+    input {
+      font-family: "Montserrat", sans-serif;
+      outline: none;
+    }
+
+    .inputText {
+      width: 75%;
+      height: 40px;
+      padding: 0;
+      border: 1px solid #c2c2c2;
+      border-radius: 5px;
+      margin: 40px 20px 40px 40px;
+      font-size: 16px;
+      text-indent: 10px;
+    }
+
+    .inputText:focus {
+      box-shadow: 0 0 3px 1px #e48f13;
+    }
+
+    .inputText.dark-theme {
+      border: 1px solid #38383a;
+      color: #fff;
+      background: #252528;
+    }
+
+    .inputText.dark-theme:focus {
+      box-shadow: 0 0 3px 1px #fff;
+    }
+
+    .buttonAdd {
+      width: 180px;
+      height: 45px;
+      padding: 0;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      margin-right: 40px;
+      color: #fff;
+      background: #e48f13;
+      font-family: "Underdog", cursive;
+      font-size: 22px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    .buttonAdd:hover {
+      background: #ffa500;
+    }
+
+    .buttonAdd.dark-theme {
+      border: 1px solid #38383a;
+      background: #141414;
+    }
+
+    .buttonAdd:hover.dark-theme {
+      background: #ffffff26;
+    }
+  }
+
+  .tasks-list {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+
+    .empty-list {
+      margin: 80px 0 80px 0;
+      color: #e48f13;
+      font-family: "Underdog", cursive;
+      font-size: 35px;
+      font-weight: 600;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      text-shadow: 1px 1px 2px #000;
+
+      i {
+        font-size: 50px;
+      }
+    }
+
+    .empty-list.dark-theme {
+      color: #fff;
+    }
+
+    .task {
+      padding: 20px 40px 20px 40px;
+      border-bottom: 1px solid #c2c2c2;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .taskText {
+        width: 86%;
+        margin: 0;
+        white-space: pre-line;
+        word-wrap: break-word;
+      }
+
+      .taskText.task-done {
+        opacity: 0.6;
+        text-decoration: line-through;
+      }
+
+      .taskButtons {
+        margin-left: 40px;
+
+        .fa-check,
+        .fa-trash-can {
+          padding: 7px;
+          border: 1px solid #91959d;
+          border-radius: 5px;
+          opacity: 0.7;
+          color: #fff;
+          font-size: 20px;
+          cursor: pointer;
+        }
+
+        .fa-check {
+          margin-right: 10px;
+          background: #28a436;
+        }
+
+        .fa-check.task-done {
+          color: #28a436;
+          background: inherit;
+        }
+
+        .fa-trash-can {
+          background: #d34739;
+        }
+
+        .fa-check:hover,
+        .fa-trash-can:hover {
+          opacity: 1;
+        }
+      }
+    }
+
+    .task:last-child {
+      border-bottom: none;
+    }
+
+    .task.dark-theme {
+      border-bottom: 1px solid #38383a;
+    }
+
+    .task:last-child.dark-theme {
+      border-bottom: none;
+    }
+  }
+
+  .tasks-status {
+    margin-bottom: 30px;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+
+    .statusText {
+      margin: 50px 40px 50px 40px;
+
+      p {
+        width: 100%;
+        margin: 0;
+        font-size: 20px;
+        font-weight: 600;
+        font-variant: small-caps;
+        letter-spacing: 1px;
+      }
+    }
+
+    .buttonDelete {
+      width: 340px;
+      height: 45px;
+      padding: 0;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      margin-right: 40px;
+      color: #fff;
+      background: #707070;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      cursor: pointer;
+      display: none;
+    }
+
+    .buttonDelete:hover {
+      background: #00000076;
+    }
+
+    .buttonDelete.dark-theme {
+      border: 1px solid #38383a;
+      background: #252528;
+    }
+
+    .buttonDelete.dark-theme:hover {
+      background: #ffffff26;
+    }
+  }
+}
+
+footer {
+  @extend %flex-center;
+  @extend %header-and-footer;
+
+  p {
+    text-align: center;
+    letter-spacing: 1px;
+    line-height: 30px;
+  }
+}

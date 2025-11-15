@@ -1,0 +1,138 @@
+@media (max-width: 1000px) {
+  main .container {
+    .tasks-list {
+      .task {
+        width: 100vw;
+        .taskText {
+          width: 83%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  main .container {
+    .tasks-status {
+      flex-direction: column;
+      align-items: flex-start;
+      .statusText {
+        margin: 30px 40px 30px 40px;
+      }
+      .buttonDelete {
+        margin: 0 40px 40px 35px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  main .container {
+    .adding-task {
+      flex-direction: column;
+      .inputText {
+        width: 90%;
+        margin: 40px 40px 20px 40px;
+      }
+      .buttonAdd {
+        align-self: flex-start;
+        margin: 0 40px 40px 35px;
+      }
+    }
+    .tasks-list {
+      .task {
+        .taskText {
+          width: 77%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    h1 {
+      font-size: 24px;
+    }
+    .used-theme {
+      margin-right: 20px;
+    }
+  }
+  main .container {
+    .tasks-list {
+      .empty-list {
+        font-size: 20px;
+        i {
+          font-size: 35px;
+        }
+      }
+      .task {
+        .taskText {
+          width: 66%;
+        }
+      }
+    }
+    .tasks-status {
+      align-items: center;
+      .statusText {
+        p {
+          text-align: center;
+        }
+      }
+    }
+  }
+  footer p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 425px) {
+  main .container {
+    .adding-task {
+      .inputText {
+        margin: 40px 0 20px 0;
+      }
+      .buttonAdd {
+        align-self: center;
+        width: 180px;
+        margin: 0 0 40px 0;
+      }
+    }
+    .tasks-list {
+      .task {
+        padding: 20px;
+        .taskText {
+          width: 71%;
+        }
+        .taskButtons {
+          margin-left: 20px;
+        }
+      }
+    }
+    .tasks-status {
+      .statusText {
+        margin: 30px 20px 30px 20px;
+        p {
+          font-size: 18px;
+        }
+      }
+      .buttonDelete {
+        width: 310px;
+        margin: 0 0 40px 0;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  main .container {
+    .tasks-list {
+      .task {
+        .taskText {
+          width: 65%;
+        }
+      }
+    }
+  }
+}
